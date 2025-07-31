@@ -13,6 +13,7 @@ import { Badge } from "@/components/ui/badge"
 import { User, Shield, Bell, Building, Palette, CreditCard, Trash2, UserPlus, FileUp, Ban } from "lucide-react"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
+import { Plus } from 'lucide-react'; // Or your correct icon lib
 import { useToast } from "@/components/ui/use-toast"
 
 const initialComplaintCategories = ["Plumbing", "Electrical", "Cleaning", "Security", "Maintenance", "Other"];
