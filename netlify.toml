@@ -1,12 +1,19 @@
 # Netlify configuration file
 
+# This section configures the build settings for your site.
 [build]
+  # The command to build your Next.js application.
   command = "npm run build"
-  publish = "out"  # Use "out" if you're using `next export`, otherwise let the plugin handle it.
+  # The directory where the output of the build command is stored.
+  publish = ".next"
 
+# This section configures the behavior of Netlify Functions.
 [functions]
-  timeout = 26
+  # Configures Next.js API routes to be deployed as Netlify Functions.
+  included_files = ["**/*"]
 
-# Enable the official Next.js plugin for full SSR support
-[[plugins]]
-  package = "@netlify/plugin-nextjs"
+# This sets the timeout for all serverless functions to 26 seconds.
+# This is crucial for preventing 504 Gateway Timeout errors, especially
+# for functions that need to establish a database connection on a cold start.
+[functions."*"]
+  timeout = 26
